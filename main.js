@@ -2,6 +2,7 @@ function onClickButton() {
     activeP();
     setTimeout(timerDisableP,4000);
     setText();
+    cleanInput();
 }
 
 
