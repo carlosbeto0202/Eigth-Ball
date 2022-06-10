@@ -52,6 +52,7 @@ function cleanInput() {
 const elementAnswer = document.querySelector("#answerUser");
 const elementQuestion = document.querySelector("#inputText");
 const elementButton = document.querySelector("#buttonQuestion")
+
 const answer = [
     "Certeza!",
     "Não tenho tanta certeza.",
@@ -74,10 +75,25 @@ const answer = [
     "Sinais apontam que sim.",
 ];
 
+function timer(){
+    setTimeout(function(){
+        
+        elementAnswer.style.opacity = 0;
+        elementButton.removeAttribute("disabled")
+        
+    },1000);
+    elementAnswer.style.opacity = 1;
+}
+
+function opacity(){
+    
+}
+
 function onClickButton() {
 
-    if (elementQuestion.value == ''){
+    if (elementQuestion.value == '' ){
         elementAnswer.innerHTML= "Digite algo";
+        timer();
         return
     }
 
@@ -86,14 +102,7 @@ function onClickButton() {
     const messageRandom = Math.floor(Math.random() * answer.length);
     const question = "<p id=questionUser>" +elementQuestion.value + "</p>";
     elementAnswer.innerHTML = question + answer[messageRandom]; 
-
-    elementAnswer.style.opacity = 1;
-
-    setTimeout(function(){
-        elementAnswer.style.opacity = 0;
-        elementButton.removeAttribute("disabled")
-        elementQuestion.value = '';
-    },3000);
-
+    elementQuestion.value = '';
+    timer();
 
 }
