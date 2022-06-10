@@ -19,7 +19,7 @@ function timerDisableP(){
 
 function setText (){
     const texto_pego = document.getElementById("inputText").value;
-    if (texto_pego != 0 || texto_pego != null){
+    if (texto_pego != '' ){
         document.getElementById("questionUser").innerHTML = texto_pego;
         randomNunber();
     }
