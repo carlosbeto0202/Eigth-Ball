@@ -85,10 +85,6 @@ function timer(){
     elementAnswer.style.opacity = 1;
 }
 
-function opacity(){
-    
-}
-
 function onClickButton() {
 
     if (elementQuestion.value == '' ){
