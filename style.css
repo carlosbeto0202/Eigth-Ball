@@ -50,6 +50,7 @@ body{
 section{
     text-align: center;
     width: 80%;
+    
     max-width:60rem; 
     min-height: 50rem;
 
@@ -100,10 +101,10 @@ section input{
 section button{
     width: 80%;
     padding: 1.3rem;
-    margin-bottom: 15px;
 
     border: none;
     border-radius:20px;
+    margin-bottom: 15px;
 
     font-family: 'Roboto Slab', serif;
     font-weight: 1000;
@@ -120,10 +121,13 @@ section button:hover{
     cursor: pointer;
 }
 
+
+/* Meu primeiro JavaScrip */
+/*
 #questionUser{
     visibility: hidden;
 
-    transition: color 1s ease-in-out;
+    transition: color 1s ease-in-out;  //tipo de transiçao  
     color: rgba(255, 255, 255, 0);
 
 }
@@ -135,11 +139,23 @@ section button:hover{
 
 #answerUser{
     visibility: hidden;
-    transition: color 1s 1s ease-in-out;
+    transition: color 1s 1s ease-in-out;  //tipo de transiçao  
     color: rgba(255, 255, 255, 0);
 }
 
 #answerUser.mostrar{
     visibility: visible;
     color:rgba(255, 255, 255, 1);
+} */
+
+#answerUser{
+    margin-top: 15px;
+    transition: opacity 1s;
+}
+
+#questionUser {
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.9;
+    margin-bottom: 10px;
 }

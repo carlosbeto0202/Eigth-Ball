@@ -1,15 +1,16 @@
-function onClickButton() {
+/* Meu Primeiro JavaScrip Web */
+
+/* function onClickButton() {
     activeP();
     setTimeout(timerDisableP,4000);
-    setText();
+    getText();
     cleanInput();
 }
 
 
 function activeP(){
     questionUser.classList.add("mostrar");
-    answerUser.classList.add("mostrar")
-    
+    answerUser.classList.add("mostrar") 
 }
 
 function timerDisableP(){
@@ -17,17 +18,15 @@ function timerDisableP(){
     answerUser.classList.remove("mostrar")
 }
 
-function setText (){
+function getText (){
     const texto_pego = document.getElementById("inputText").value;
-    if (texto_pego != 0 || texto_pego != null){
+    if (texto_pego != ''){
         document.getElementById("questionUser").innerHTML = texto_pego;
         randomNunber();
     }
     else{
         document.getElementById("questionUser").innerHTML = "Digite algo";
-    }
-    
-        
+    }  
 }
 
 function randomNunber(){
@@ -49,4 +48,52 @@ function randomNunber(){
 
 function cleanInput() {
     document.getElementById("inputText").value = null;
+} */
+const elementAnswer = document.querySelector("#answerUser");
+const elementQuestion = document.querySelector("#inputText");
+const elementButton = document.querySelector("#buttonQuestion")
+const answer = [
+    "Certeza!",
+    "Não tenho tanta certeza.",
+    "É decididamente assim.",
+    "Não conte com isso.",
+    "Sem dúvidas!",
+    "Pergunte novamente mais tarde.",
+    "Sim, definitivamente!",
+    "Minha resposta é não.",
+    "Você pode contar com isso.",
+    "Melhor não te dizer agora.",
+    "A meu ver, sim.",
+    "Minhas fontes dizem não.",
+    "Provavelmente.",
+    "Não é possível prever agora.",
+    "Perspectiva boa.",
+    "As perspectivas não são tão boas.",
+    "Sim.",
+    "Concentre-se e pergunte novamente.",
+    "Sinais apontam que sim.",
+];
+
+function onClickButton() {
+
+    if (elementQuestion.value == ''){
+        elementAnswer.innerHTML= "Digite algo";
+        return
+    }
+
+    elementButton.setAttribute("disabled",true)
+
+    const messageRandom = Math.floor(Math.random() * answer.length);
+    const question = "<p id=questionUser>" +elementQuestion.value + "</p>";
+    elementAnswer.innerHTML = question + answer[messageRandom]; 
+
+    elementAnswer.style.opacity = 1;
+
+    setTimeout(function(){
+        elementAnswer.style.opacity = 0;
+        elementButton.removeAttribute("disabled")
+        elementQuestion.value = '';
+    },3000);
+
+
 }
