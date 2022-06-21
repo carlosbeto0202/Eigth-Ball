@@ -81,7 +81,7 @@ function timer(){
         elementAnswer.style.opacity = 0;
         elementButton.removeAttribute("disabled")
         
-    },1000);
+    },3000);
     elementAnswer.style.opacity = 1;
 }
 
